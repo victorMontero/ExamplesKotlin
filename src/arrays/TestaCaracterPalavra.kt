@@ -2,6 +2,7 @@ package arrays
 
 fun main() {
 
+    //testaCaracterRepetido("salompas")
     testaPalavra("banana")
 
 }
@@ -11,8 +12,12 @@ fun main() {
 fun testaPalavra(palavra: String) {
     val listaPalavra: Array<String> = palavra.toCharArray().map { it.toString() }.toTypedArray()
 
+
+
+
     listaPalavra.forEachIndexed { i, letra ->
-        var verificarLetra = listaPalavra[i]
+
+        val verificarLetra = listaPalavra[0]
 
         if(listaPalavra.contains(verificarLetra)){
             println(true)
@@ -31,4 +36,19 @@ fun testaPalavra(palavra: String) {
 //    }
 
 }
+
+fun testaCaracterRepetido (palavra: String){
+    val primeiraLetra = palavra.subSequence(0,1)
+    //println(primeiraLetra)
+
+    val restoNome = palavra.subSequence(1,palavra.length)
+    //println(restoNome)
+
+    if (restoNome.contains(primeiraLetra)){
+        println(true)
+    } else {
+        println(false)
+    }
+}
+
 
